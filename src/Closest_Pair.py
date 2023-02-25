@@ -53,7 +53,6 @@ def _closest_pair(points_sorted_x):
         closest_pair = closest_pair_right
 
     # Find the closest pair with one point in each set
-
     x_mid_point = points_sorted_x[mid]
     strip = [point for point in points_sorted_x if abs(point[0] - x_mid_point[0]) <= distance]
     n_strip = len(strip)
@@ -107,20 +106,20 @@ points = [[round(random.uniform(0, 100), 2) for i in range(d)] for j in range(n)
 start=time.time()
 distance, closest_points = list(closest_pair(points))
 end=time.time()
-timed=round(end-start,2)
+timed=round((end-start)*1000,2)
 distance=round(distance,2)
 # Print the result
 print("======================Divide and Conquer======================")
 print(f"The closest pair of points is {closest_points[0]} and {closest_points[1]} with a distance of {distance}")
-print(f"Time: {timed*1000} ms (run on {platform.processor()})")
+print(f"Time: {timed} ms (run on {platform.processor()})")
 print(f"Total euclidian equation: {c}")
 print("======================BruteForce======================")
 a=time.time()
 brute_distance,brute_point = list(closest_pair_brute_force(points))
 b=time.time()
-timeb=round(b-a,2)
+timeb=round((b-a)*1000,2)
 print(f"The closest pair of points is {closest_points[0]} and {closest_points[1]} with a distance of {distance}")
-print(f"Time: {timeb*1000} ms (run on {platform.processor()})")
+print(f"Time: {timeb} ms (run on {platform.processor()})")
 print(f"Total euclidian equation: {cb}")
 
 

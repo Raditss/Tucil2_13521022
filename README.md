@@ -3,7 +3,7 @@
 This program finds the closest pair of points in a list of n-dimensional points using the divide and conquer algorithm.
 
 # Usage
-* Run the program using `python src/Closest_Pair.py` (windows)
+* Run the program using `python "src/Closest_Pair.py"` (windows)
 * Run the program using `python3 src/Closest_Pair.py` (linux/mac)
 * Enter the number of elements (between 2 and 1000).
 * Enter the number of dimensions (between 3 and 7).
