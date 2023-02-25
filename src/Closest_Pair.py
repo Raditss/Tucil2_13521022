@@ -1,8 +1,10 @@
 import random
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-import time
 import numpy as np
+import time
+import platform
+
 
 
 def quick_sort(arr):
@@ -104,14 +106,24 @@ cb=0
 points = [[round(random.uniform(0, 100), 2) for i in range(d)] for j in range(n)]
 start=time.time()
 distance, closest_points = list(closest_pair(points))
-# brute_distance,brute_point = list(closest_pair_brute_force(points))
 end=time.time()
-time=round(end-start,5)
+timed=round(end-start,2)
 distance=round(distance,2)
 # Print the result
+print("======================Divide and Conquer======================")
 print(f"The closest pair of points is {closest_points[0]} and {closest_points[1]} with a distance of {distance}")
-print(f"Time: {time*1000} ms")
+print(f"Time: {timed*1000} ms (run on {platform.processor()})")
 print(f"Total euclidian equation: {c}")
+print("======================BruteForce======================")
+a=time.time()
+brute_distance,brute_point = list(closest_pair_brute_force(points))
+b=time.time()
+timeb=round(b-a,2)
+print(f"The closest pair of points is {closest_points[0]} and {closest_points[1]} with a distance of {distance}")
+print(f"Time: {timeb*1000} ms (run on {platform.processor()})")
+print(f"Total euclidian equation: {cb}")
+
+
 
 # Separate the x, y, and z coordinates into individual arrays
 x_coords = [point[0] for point in points]
