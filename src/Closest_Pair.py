@@ -5,9 +5,25 @@ import time
 import numpy as np
 
 
-def closest_pair(points):
-    points_sorted_x = sorted(points, key=lambda p: p[0])
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2][0]
+    left = []
+    right = []
+    equal = []
+    for elem in arr:
+        if elem[0] < pivot:
+            left.append(elem)
+        elif elem[0] == pivot:
+            equal.append(elem)
+        else:
+            right.append(elem)
+    return quick_sort(left) + equal + quick_sort(right)
 
+
+def closest_pair(points):
+    points_sorted_x = quick_sort(points)
     return _closest_pair(points_sorted_x)
 
 
