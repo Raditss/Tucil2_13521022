@@ -123,36 +123,36 @@ print(f"Time: {timeb} ms (run on {platform.processor()})")
 print(f"Total euclidian equation: {cb}")
 
 
-
-# Separate the x, y, and z coordinates into individual arrays
-x_coords = [point[0] for point in points]
-x_coords.remove(closest_points[0][0])
-x_coords.remove(closest_points[1][0])
-y_coords = [point[1] for point in points]
-y_coords.remove(closest_points[0][1])
-y_coords.remove(closest_points[1][1])
-z_coords = [point[2] for point in points]
-z_coords.remove(closest_points[0][2])
-z_coords.remove(closest_points[1][2])
-
-# Create a 3D scatter plot of the points
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-ax.scatter(x_coords, y_coords, z_coords, c='black')
-
-# Highlight the first two points in red
-ax.scatter(closest_points[0][0], closest_points[0][1], closest_points[0][2], c='red')
-ax.scatter(closest_points[1][0], closest_points[1][1], closest_points[1][2], c='red')
-
-# Set the axis labels
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_zlabel('Z')
-
-ax.plot([closest_points[0][0], closest_points[1][0]], [closest_points[0][1], closest_points[1][1]], [closest_points[0][2], closest_points[1][2]], c='red')
-
-# Show the plot
-plt.show()
+if d>=3:
+    # Separate the x, y, and z coordinates into individual arrays
+    x_coords = [point[0] for point in points]
+    x_coords.remove(closest_points[0][0])
+    x_coords.remove(closest_points[1][0])
+    y_coords = [point[1] for point in points]
+    y_coords.remove(closest_points[0][1])
+    y_coords.remove(closest_points[1][1])
+    z_coords = [point[2] for point in points]
+    z_coords.remove(closest_points[0][2])
+    z_coords.remove(closest_points[1][2])
+    
+    # Create a 3D scatter plot of the points
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    ax.scatter(x_coords, y_coords, z_coords, c='black')
+    
+    # Highlight the first two points in red
+    ax.scatter(closest_points[0][0], closest_points[0][1], closest_points[0][2], c='red')
+    ax.scatter(closest_points[1][0], closest_points[1][1], closest_points[1][2], c='red')
+    
+    # Set the axis labels
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
+    
+    ax.plot([closest_points[0][0], closest_points[1][0]], [closest_points[0][1], closest_points[1][1]], [closest_points[0][2], closest_points[1][2]], c='red')
+    
+    # Show the plot
+    plt.show()
 
 
 
